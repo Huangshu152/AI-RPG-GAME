@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# 运行时数据（游戏存档数据库）
+data/
+
+# 真实 API Key —— 绝不进仓库
+.env
+.env.local
+
+# 编辑器
+.vscode/
+.idea/

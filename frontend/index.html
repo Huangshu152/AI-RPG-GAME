@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI RPG Engine V0.1</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">AI RPG Engine <span class="badge">V0.1</span></div>
+    <div class="worldbar">
+      <span id="world-name">尚未载入世界</span>
+      <span class="sep">·</span>
+      <span id="world-time">--</span>
+    </div>
+    <label class="provider-pick">AI
+      <select id="provider" title="选择这一回合由哪个 Provider 处理"></select>
+    </label>
+    <div id="conn" class="conn">连接中…</div>
+  </header>
+
+  <main class="layout">
+    <!-- 左：玩家状态 -->
+    <aside class="panel">
+      <h2>玩家状态</h2>
+      <div id="player-card" class="card empty">还没有玩家</div>
+
+      <h2>新游戏</h2>
+      <div class="newgame">
+        <input id="new-name" type="text" maxlength="32" placeholder="玩家名称（可留空）" />
+        <button id="btn-new" type="button">创建新游戏</button>
+      </div>
+    </aside>
+
+    <!-- 中：场景描述 + 事件日志 -->
+    <section class="panel center">
+      <h2>当前场景</h2>
+      <div id="scene" class="card">正在载入…</div>
+      <h2>事件日志</h2>
+      <div id="log" class="log"></div>
+    </section>
+
+    <!-- 右：当前地点 / NPC / 物品 -->
+    <aside class="panel">
+      <h2>当前地点</h2>
+      <div id="location-card" class="card empty">--</div>
+      <h2>NPC</h2>
+      <div id="npc-card" class="card empty">--</div>
+      <h2>此地物品</h2>
+      <div id="item-card" class="card empty">--</div>
+    </aside>
+  </main>
+
+  <!-- 底部：输入 -->
+  <footer class="composer">
+    <input id="cmd" type="text" autocomplete="off" autofocus
+           placeholder="斜杠指令（/look、/save…）或自然语言（例如：我走进阅览室）" />
+    <button id="send" type="button">发送</button>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
